@@ -1,11 +1,10 @@
 from fastapi import FastAPI
-from endpoints import alunos, bolsista, autor, materia, livros, livros_alugados
+from endpoints import alunos, autor, materia, livros, livros_alugados
 
 app = FastAPI()
 
 # Inclui os endpoints dos módulos separados
 app.include_router(alunos.router)
-app.include_router(bolsista.router)
 app.include_router(autor.router)
 app.include_router(materia.router)
 app.include_router(livros.router)

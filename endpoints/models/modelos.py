@@ -5,15 +5,23 @@ from datetime import date
 class Aluno(BaseModel):
     matricula: int
     nome: str
-    Data_Nasc: date
-    email: Optional[str] = None
+    Data_Nasc: str
+    email: str
+    bolsista: bool
+    password: str
 
     class Config:
         orm_mode = True
 
-class Bolsista(BaseModel):
-    matricula_aluno: int
-    Nome: str
+class Token(BaseModel):
+    access_token: str
+    token_type: str
+
+    class Config:
+        orm_mode = True
+
+class TokenData(BaseModel):
+    matricula: int
 
     class Config:
         orm_mode = True
@@ -37,6 +45,7 @@ class Livros(BaseModel):
     Titulo: str
     id_materia: Optional[int] = None
     id_autor: Optional[int] = None
+    quantidade: int
 
     class Config:
         orm_mode = True

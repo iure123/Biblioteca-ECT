@@ -12,7 +12,9 @@ cur.execute('''
         matricula BIGINT PRIMARY KEY,
         nome VARCHAR(255) NOT NULL,
         Data_Nasc DATE NOT NULL,
-        email VARCHAR(255)
+        password VARCHAR(255),
+        email VARCHAR(255),
+        bolsista BOOLEAN NOT NULL
     )
 ''')
 
@@ -44,6 +46,7 @@ cur.execute('''
         Titulo VARCHAR(255) NOT NULL,
         id_materia INT,
         id_autor INT,
+        quantidade INT,
         FOREIGN KEY (id_materia) REFERENCES Materia(id),
         FOREIGN KEY (id_autor) REFERENCES Autor(id)
     )
